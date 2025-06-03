@@ -1,35 +1,27 @@
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { StyleSheet, Text, View } from 'react-native';
 
-type TipoBotao = 'default' | 'amarelo' | 'verde';
-
-interface CardProps {
+interface CreateTaskProps {
     titulo: string;
-    tipoBotao: TipoBotao;
-    quantidade?: number;
 }
 
-export default function Card(props: CardProps) {
-
-    console.log('Card', props);
-
-    const estiloTipo = {
-        default: styles.default,
-        amarelo: styles.amarelo,
-        verde: styles.verde,
-    }
-
-  return (
-    <View style={[styles.cardContainer]}>
-        <Text>{props.titulo}</Text>
-        <Text style={[estiloTipo[props.tipoBotao], styles.conteudo]}>{props.quantidade}</Text>
-    </View>
-  );
+export default function CreateTask(props: CreateTaskProps) {
+    return (
+        <View style={styles.cardContainer}>
+            <Text style={styles.text}>{props.titulo}</Text>
+            <Text style={[styles.conteudo, styles.default]}></Text>
+            <FontAwesome6 name="square-plus" size={24} color="white" />
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
+    createTaskContainer: {
+
+    },
     cardContainer: {
         height: 100,
-        width: 113,
+        width: '100%',
         flexDirection: 'column',
         alignItems: 'center',
         backgroundColor: "#fff",
@@ -53,5 +45,5 @@ const styles = StyleSheet.create({
     conteudo: {
         fontSize: 24,
         fontWeight: 'bold',
-    }
+    },
 });
