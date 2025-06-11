@@ -15,7 +15,7 @@ export default function HomeScreen() {
   const [tarefas, setTarefas] = useState<Tarefa[]>([]);
 
   const handleAddTarefa = (descricao: string) => {
-    if (!descricao.trim()) return;
+    if (!descricao) return;
     const novaTarefa = {
       id: Date.now(),
       descricao,

@@ -13,7 +13,7 @@ export default function Input(props: InputProps) {
     const [ valor, setValor ] = useState("");
 
     const handleAdd = () => {
-        if (valor.trim() && props.onAdd) {
+        if (valor && props.onAdd) {
         props.onAdd(valor);
         setValor("");
         }
