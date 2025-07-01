@@ -16,13 +16,7 @@ export function Card({ title, author, category, year, description, onPress }: Ca
             <View style={styles.bookCard}>
                 <View style={styles.bookHeader}>
                     <Ionicons name="book" size={24} color="#fff" />
-                    <Text style={styles.title}>{title}</Text>
-                </View>
-                <View style={styles.bookBody}>
-                    <Text style={styles.subtitle}>Autor: {author}</Text>
-                    <Text style={styles.subtitle}>Categoria: {category}</Text>
-                    <Text style={styles.subtitle}>Ano: {year}</Text>
-                    <Text style={styles.description}>Descrição: {description}</Text>
+                    <Text style={styles.title}>{title} {`(${year})`}</Text>
                 </View>
             </View>
         </Pressable>
@@ -54,6 +48,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     backgroundColor: '#4f46e5',
+    height: 100
   },
   bookBody: {
     padding: 10,
