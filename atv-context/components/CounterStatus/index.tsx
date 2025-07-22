@@ -33,6 +33,7 @@ export default function CounterStatus(){
                 </Text>
                 
             </View>
+            <Text>Progresso: {count}/100</Text>
             <ProgressBar
                 progress={count / 100}
                 color="#0ea5e9"
